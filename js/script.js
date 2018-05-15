@@ -38,7 +38,7 @@ function waterStatementCels(tempValue, currentCallback) {
   }
 }
 
-function validate(callback) {
+function calculate(callback) {
   var currentCallback = callback.name;
   tempValue = window.prompt('Enter temp value');
   if (callback == toCelsius) {
@@ -49,7 +49,7 @@ function validate(callback) {
     temp1 = ' Celsius';
   }
   console.log(callback(tempValue));
-  if (tempValue != "" && tempValue != "null" && !isNaN(tempValue) && (typeof(tempValue) != 'object')){
+  if (tempValue != "" && tempValue != "null" && !isNaN(tempValue) && (typeof (tempValue) != 'object')) {
     output.innerHTML = tempValue + temp1 + ' is ' + callback(tempValue) + temp2;
     waterStatementCels(tempValue, currentCallback);
   } else {
@@ -59,8 +59,8 @@ function validate(callback) {
 };
 
 button1.addEventListener('click', function () {
-  validate(toCelsius);
+  calculate(toCelsius);
 });
 button2.addEventListener('click', function () {
-  validate(toFahrenheit);
+  calculate(toFahrenheit);
 });
