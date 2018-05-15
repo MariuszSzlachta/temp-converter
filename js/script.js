@@ -30,7 +30,7 @@ function waterStatementCels(tempValue, currentCallback) {
 
     if (tempValue > 32 && tempValue < 212) {
       info.innerHTML = 'In this temperature water is a liquid';
-    } else if (tempValue > 212) {
+    } else if (tempValue >= 212) {
       info.innerHTML = 'In this temperature water is a gas';
     } else {
       info.innerHTML = 'In this temperature water is a frost';
