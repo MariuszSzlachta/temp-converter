@@ -12,4 +12,6 @@ body { font-family: 'Open Sans', sans-serif; margin: 0; padding: 0; }
 
 .button:hover { background-color: #23c323; }
 
-.temp-output { width: 80%; min-height: 40px; border: 1px solid grey; border-radius: 4px; padding: 1rem; }
+.temp-output, .info { width: 80%; min-height: 40px; border: 1px solid grey; border-radius: 4px; padding: 1rem; text-align: center; }
+
+.info { margin-top: 1rem; }
