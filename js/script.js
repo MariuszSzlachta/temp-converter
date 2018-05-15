@@ -37,30 +37,6 @@ function waterStatementCels(tempValue, currentCallback) {
     }
   }
 }
-//end
-// switch (tempValue) {
-//   case tempValue > 32 && tempValue < 212:
-//     info.innerHTML = 'In this temperature water is a liquid';
-//     break;
-
-//   case tempValue > 212:
-//     info.innerHTML = 'In this temperature water is a gas';
-//     break;
-
-//   default:
-//     info.innerHTML = 'In this temperature water is a frost';
-// }
-
-// // Function to run in eventListeners
-
-// function runToCelsius() {
-//   validate(toCelsius);
-// }
-
-// function runToFahrenheit() {
-//   validate(toFahrenheit);
-// }
-// // end
 
 function validate(callback) {
   var currentCallback = callback.name;
