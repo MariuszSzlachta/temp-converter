@@ -17,24 +17,22 @@ var toCelsius = function (tempValue) {
 
 //fun water statement
 function waterStatementCels(tempValue, currentCallback) {
-  if (currentCallback == 'toFahrenheit') {
-
+  //display
+  function dispStatement(tempValue) {
+    var message = 'In this temperature water is a ';
     if (tempValue > 0 && tempValue < 100) {
-      info.innerHTML = 'In this temperature water is a liquid';
+      info.innerHTML = message + 'liquid';
     } else if (tempValue >= 100) {
-      info.innerHTML = 'In this temperature water is a gas';
+      info.innerHTML = message + 'gas';
     } else {
-      info.innerHTML = 'In this temperature water is a frost';
+      info.innerHTML = message + 'frost';
     }
+  }
+  if (currentCallback == 'toFahrenheit') {
+    dispStatement(tempValue);
   } else if (currentCallback == 'toCelsius') {
-
-    if (tempValue > 32 && tempValue < 212) {
-      info.innerHTML = 'In this temperature water is a liquid';
-    } else if (tempValue >= 212) {
-      info.innerHTML = 'In this temperature water is a gas';
-    } else {
-      info.innerHTML = 'In this temperature water is a frost';
-    }
+    var tempValue2 = toCelsius(tempValue);
+    dispStatement(tempValue2);
   }
 }
 
