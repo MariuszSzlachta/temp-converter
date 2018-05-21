@@ -48,7 +48,7 @@ function calculate(callback) {
     temp2 = ' Fahrenheit';
     temp1 = ' Celsius';
   }
-  console.log(callback(tempValue));
+
   if (tempValue != "" && tempValue != "null" && !isNaN(tempValue) && (typeof (tempValue) != 'object')) {
     output.innerHTML = tempValue + temp1 + ' is ' + callback(tempValue) + temp2;
     waterStatementCels(tempValue, currentCallback);
