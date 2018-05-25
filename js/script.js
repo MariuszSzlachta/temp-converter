@@ -15,19 +15,19 @@ var toCelsius = function (tempValue) {
   return Math.round((tempValue - 32) / 1.8);
 };
 
+function dispStatement(tempValue) {
+  var message = 'In this temperature water is a ';
+  if (tempValue > 0 && tempValue < 100) {
+    info.innerHTML = message + 'liquid';
+  } else if (tempValue >= 100) {
+    info.innerHTML = message + 'gas';
+  } else {
+    info.innerHTML = message + 'frost';
+  }
+}
 //fun water statement
 function waterStatementCels(tempValue, currentCallback) {
   //display
-  function dispStatement(tempValue) {
-    var message = 'In this temperature water is a ';
-    if (tempValue > 0 && tempValue < 100) {
-      info.innerHTML = message + 'liquid';
-    } else if (tempValue >= 100) {
-      info.innerHTML = message + 'gas';
-    } else {
-      info.innerHTML = message + 'frost';
-    }
-  }
   if (currentCallback == 'toFahrenheit') {
     dispStatement(tempValue);
   } else if (currentCallback == 'toCelsius') {
@@ -38,7 +38,7 @@ function waterStatementCels(tempValue, currentCallback) {
 
 function calculate(callback) {
   var currentCallback = callback.name;
-  tempValue = window.prompt('Enter temp value');
+  tempValue = Number(window.prompt('Enter temp value'));
   if (callback == toCelsius) {
     temp1 = ' Fahrenheit';
     temp2 = ' Celsius';
@@ -47,7 +47,7 @@ function calculate(callback) {
     temp1 = ' Celsius';
   }
 
-  if (tempValue != "" && tempValue != "null" && !isNaN(tempValue) && (typeof (tempValue) != 'object')) {
+  if (tempValue != "" && tempValue != "null" && !isNaN(tempValue)) {
     output.innerHTML = tempValue + temp1 + ' is ' + callback(tempValue) + temp2;
     waterStatementCels(tempValue, currentCallback);
   } else {
